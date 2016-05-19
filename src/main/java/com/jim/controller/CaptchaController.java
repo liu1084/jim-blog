@@ -1,6 +1,7 @@
 package com.jim.controller;
 
 import com.jim.model.CaptchaService;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,10 @@ public class CaptchaController {
 	@RequestMapping(value = {"/captcha"}, method = RequestMethod.GET)
 	public String captcha() throws IOException {
 		captchaService.generateImage();
-		return captchaService.getFile();
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("fileName", captchaService.getFile());
+        jsonObject.put("text", captchaService.getWord());
+		return jsonObject.toString();
 	}
 }
