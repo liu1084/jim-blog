@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "captcha.directory",
+      "type": "java.lang.String",
+      "description": "Description for captcha.directory."
+    }
+  ]
+}
