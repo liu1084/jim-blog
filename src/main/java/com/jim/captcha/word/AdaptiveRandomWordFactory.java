@@ -29,7 +29,7 @@ public class AdaptiveRandomWordFactory extends RandomWordFactory {
 	}
 
 	public AdaptiveRandomWordFactory() {
-		characters = "absdegkmnopwx23456789";
+		characters = "abcdefghijkmnpqrstuwxyz23456789";
 		wideCharacters = "mw";
 	}
 	

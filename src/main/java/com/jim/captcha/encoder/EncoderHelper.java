@@ -27,10 +27,10 @@ import java.io.OutputStream;
 
 public class EncoderHelper {
 
-	public static String getChallangeAndWriteImage(CaptchaService service, String format, OutputStream os) throws IOException {
+	public static Captcha getChallangeAndWriteImage(CaptchaService service, String format, OutputStream os) throws IOException {
 		Captcha captcha = service.getCaptcha();
 		ImageIO.write(captcha.getImage(), format, os); 
-		return captcha.getChallenge();
+		return captcha;
 	}
 	
 }

@@ -1,6 +1,6 @@
-package com.jim.model;
+package com.jim.service;
 
-import java.awt.image.BufferedImage;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
@@ -8,9 +8,9 @@ import java.io.IOException;
  * This class is ...
  */
 public interface CaptchaService extends BaseService {
-	String getWord();
-	BufferedImage getImage();
 	void generateImage() throws IOException;
 	boolean validate(String word);
 	String getFile();
+	String getWord();
+	String getCaptchaUrl(HttpServletRequest httpServletRequest);
 }

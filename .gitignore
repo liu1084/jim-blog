@@ -6,3 +6,4 @@ work
 *.iml
 src/main/resources/static/app/.sass-cache/
 src/main/resources/static/app/dist/
+/out/

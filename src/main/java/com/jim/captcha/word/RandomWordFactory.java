@@ -39,7 +39,7 @@ public class RandomWordFactory implements WordFactory {
 	}
 
 	public RandomWordFactory() {
-		characters = "absdegkmnopwx23456789";
+		characters = "abcdefghijkmnpqrstuwxyz23456789";
 		minLength = 6;
 		maxLength = 6;
 	}
