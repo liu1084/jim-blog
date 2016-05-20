@@ -10,3 +10,6 @@ src/main/resources/static/app/dist/
 .classpath
 .project
 .settings
+/.classpath
+/.project
+/.settings
