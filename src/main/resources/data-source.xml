@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+参考：
+http://www.mybatis.org/spring/mappers.html
+http://blog.csdn.net/xiaoyu411502/article/details/48164311
+http://blog.csdn.net/bluesky5219/article/details/7066174
+https://github.com/abel533/MyBatis-Spring-Boot
+http://www.mybatis.org/mybatis-3/zh/configuration.html
+
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.jim.dao.UserMapper"></property>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+    </bean>
+    <bean id="userService" class="com.jim.service.impl.UserServiceImpl">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+</beans>

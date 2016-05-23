@@ -17,22 +17,28 @@ import java.io.InputStream;
  * This class is ...
  */
 @Controller
+@RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
 public class DashboardController {
-    @RequestMapping(value = {"", "/", "index"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"", "/index.html"}, method = RequestMethod.GET)
     public String index() throws IOException {
-        ClassPathResource classPathResource = new ClassPathResource("static/app/css/ie.css");
-
-
-        InputStream inputStream = classPathResource.getInputStream();
-        try {
-            File somethingFile = File.createTempFile("test", ".txt");
-            FileUtils.copyInputStreamToFile(inputStream, somethingFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            IOUtils.closeQuietly(inputStream);
-        }
+//        ClassPathResource classPathResource = new ClassPathResource("static/app/css/ie.css");
+//
+//
+//        InputStream inputStream = classPathResource.getInputStream();
+//        try {
+//            File somethingFile = File.createTempFile("test", ".txt");
+//            FileUtils.copyInputStreamToFile(inputStream, somethingFile);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            IOUtils.closeQuietly(inputStream);
+//        }
 
         return "index";
+    }
+
+    @RequestMapping(value = {"/hub.html"}, method = RequestMethod.GET)
+    public String hub(){
+        return "hub";
     }
 }

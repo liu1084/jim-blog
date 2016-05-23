@@ -1,0 +1,41 @@
+{
+  "name": "cross-storage",
+  "version": "0.8.1",
+  "description": "Cross domain local storage",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Daniel St. Jules",
+      "email": "danielst.jules@gmail.com",
+      "url": "http://danielstjules.com"
+    }
+  ],
+  "keywords": [
+    "local",
+    "storage",
+    "cross",
+    "domain"
+  ],
+  "ignore": [
+    ".*",
+    "media",
+    "gulpfile.js",
+    "package.json",
+    "README.md",
+    "index.js",
+    "lib",
+    "example",
+    "test"
+  ],
+  "homepage": "https://github.com/zendesk/cross-storage",
+  "_release": "0.8.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.8.1",
+    "commit": "ed5625815c9ea20db95688a7789a28d43bd452e7"
+  },
+  "_source": "https://github.com/zendesk/cross-storage.git",
+  "_target": "^0.8.1",
+  "_originalSource": "cross-storage",
+  "_direct": true
+}

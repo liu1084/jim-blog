@@ -1,7 +1,9 @@
 package com.jim.service.impl;
 
+import com.jim.dao.UserMapper;
 import com.jim.service.UserService;
 import com.jim.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,28 +14,31 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
+    @Autowired
+    UserMapper userMapper;
+
 	@Override
 	public long create(User user) {
-		return 0;
+		return userMapper.insert(user);
 	}
 
 	@Override
 	public User read(long id) {
-		return null;
+		return userMapper.selectByPrimaryKey(id);
 	}
 
 	@Override
-	public int update(long id, User user) {
-		return 0;
+	public int update(User user) {
+		return userMapper.updateByPrimaryKey(user);
 	}
 
 	@Override
-	public boolean delete(long id) {
-		return false;
+	public int delete(long id) {
+		return userMapper.deleteByPrimaryKey(id);
 	}
 
 	@Override
 	public List<User> all() {
-		return null;
+		return userMapper.getAll();
 	}
 }

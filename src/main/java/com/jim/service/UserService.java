@@ -1,6 +1,7 @@
 package com.jim.service;
 
 import com.jim.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public interface UserService {
 	long create(User user);
 	User read(long id);
-	int update(long id, User user);
-	boolean delete(long id);
+	int update(User user);
+	int delete(long id);
 	List<User> all();
 }
