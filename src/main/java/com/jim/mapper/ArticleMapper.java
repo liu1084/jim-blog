@@ -1,7 +1,6 @@
 package com.jim.mapper;
 
 import com.jim.model.Article;
-
 import java.util.List;
 
 public interface ArticleMapper {

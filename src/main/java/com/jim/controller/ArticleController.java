@@ -20,6 +20,11 @@ public class ArticleController {
         return articleService.all();
     }
 
+    @RequestMapping(value = "/new",method = RequestMethod.GET)
+    public String newOne(){
+        return "article/newOne";
+    }
+
     @RequestMapping(value = {"", "/"}, method = RequestMethod.POST)
     @ResponseBody
     public long create(@RequestBody Article article){

@@ -16,5 +16,4 @@
         <property name="cacheable" value="false"/>
         <property name="suffix" value=".html"/>
     </bean>
-
 </beans>
