@@ -5,6 +5,7 @@
 - And you can validate it by call a API: http://YOUR-DOMAIN:PORT/captcha/challenge/code.
 - demo png:
 ![](https://github.com/liu1084/jim-captcha/blob/master/3f386186-b85c-40e8-ae5b-87e36c075361.png)
+![](https://github.com/liu1084/jim-captcha/blob/master/demo.png)
 
 
 
