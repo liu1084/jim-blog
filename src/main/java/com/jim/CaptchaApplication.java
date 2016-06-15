@@ -28,35 +28,10 @@ import java.util.concurrent.locks.ReadWriteLock;
  */
 
 @SpringBootApplication
-@EnableAutoConfiguration
 @ImportResource({"captcha.xml"})
 @PropertySource(value = "application.properties")
-@ComponentScan
 @MapperScan("com.jim.mapper")
 public class CaptchaApplication extends WebMvcConfigurerAdapter {
-
-    @Bean
-    @ConfigurationProperties(prefix="spring.datasource")
-    public DataSource dataSource() {
-        return new org.apache.tomcat.jdbc.pool.DataSource();
-    }
-
-    @Bean
-    public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(dataSource());
-        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mappers/*.xml"));
-        sqlSessionFactoryBean.setConfigLocation(resolver.getResource("classpath:/mybatis.config.xml"));
-        return sqlSessionFactoryBean.getObject();
-    }
-
-    @Bean
-    public PlatformTransactionManager transactionManager() {
-        return new DataSourceTransactionManager(dataSource());
-    }
-
-
     public static void main(String[] args) {
 		SpringApplication.run(CaptchaApplication.class, args);
 	}

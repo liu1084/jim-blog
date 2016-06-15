@@ -15,40 +15,35 @@ import java.util.List;
  * This class is ...
  */
 
-@Controller
+@RestController
 @RequestMapping(value = {"/user"})
 public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = {"", "/", "/all"}, method = RequestMethod.GET)
-    @ResponseBody
+    @RequestMapping(value = {"", "/", "/users"}, method = RequestMethod.GET)
     public List<User> index() {
-        return userService.all();
+        return userService.users();
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
-    @ResponseBody
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
     public int update(@RequestBody(required = true) User user) {
         return userService.update(user);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    @ResponseBody
     public long create(@RequestBody(required = true) User user) {
         return userService.create(user);
     }
 
-    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
-    @ResponseBody
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public User read(@PathVariable long id) {
         return userService.read(id);
     }
 
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    @ResponseBody
-    public int delete(@PathVariable(value = "{id}") long id) {
+    public int delete(@PathVariable long id) {
         return userService.delete(id);
     }
 

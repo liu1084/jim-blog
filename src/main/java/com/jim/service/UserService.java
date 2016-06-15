@@ -14,5 +14,5 @@ public interface UserService {
 	User read(long id);
 	int update(User user);
 	int delete(long id);
-	List<User> all();
+	List<User> users();
 }

@@ -49,24 +49,24 @@ public class EncrypRSA {
         return (RSAPublicKey)keyPair.getPublic();
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
-        String msg = "liujun";
-        generateKeyPair();
-        //得到私钥
-        RSAPrivateKey privateKey = getRsaPrivateKey();
-        //得到公钥
-        RSAPublicKey publicKey = getRsaPublicKey();
-
-        //用公钥加密
-        byte[] srcBytes = msg.getBytes();
-        byte[] resultBytes = encrypt(publicKey, srcBytes);
-
-        //用私钥解密
-        byte[] decBytes = decrypt(privateKey, resultBytes);
-
-        System.out.println("明文是:" + msg);
-        System.out.println("加密后是:" + new String(resultBytes));
-        System.out.println("解密后是:" + new String(decBytes));
-    }
+//    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
+//        String msg = "liujun";
+//        generateKeyPair();
+//        //得到私钥
+//        RSAPrivateKey privateKey = getRsaPrivateKey();
+//        //得到公钥
+//        RSAPublicKey publicKey = getRsaPublicKey();
+//
+//        //用公钥加密
+//        byte[] srcBytes = msg.getBytes();
+//        byte[] resultBytes = encrypt(publicKey, srcBytes);
+//
+//        //用私钥解密
+//        byte[] decBytes = decrypt(privateKey, resultBytes);
+//
+//        System.out.println("明文是:" + msg);
+//        System.out.println("加密后是:" + new String(resultBytes));
+//        System.out.println("解密后是:" + new String(decBytes));
+//    }
 
 }

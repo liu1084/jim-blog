@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> all() {
+    public List<User> users() {
         return userMapper.users();
     }
 }

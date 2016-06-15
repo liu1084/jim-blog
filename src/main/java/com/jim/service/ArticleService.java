@@ -16,5 +16,5 @@ public interface ArticleService extends BaseService {
 
     int delete(long id);
 
-    List<Article> all();
+    List<Article> articles();
 }

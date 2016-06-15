@@ -9,20 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequestMapping(value = "/article")
-@Controller
+@RestController
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    @RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
-    @ResponseBody
+    @RequestMapping(value = {"", "/", "/articles"}, method = RequestMethod.GET)
     public List<Article> index(){
-        return articleService.all();
-    }
-
-    @RequestMapping(value = "/new",method = RequestMethod.GET)
-    public String newOne(){
-        return "article/newOne";
+        return articleService.articles();
     }
 
     @RequestMapping(value = {"", "/"}, method = RequestMethod.POST)
@@ -31,7 +25,7 @@ public class ArticleController {
         return articleService.create(article);
     }
 
-    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Article read(@PathVariable long id){
         return articleService.read(id);
@@ -43,7 +37,7 @@ public class ArticleController {
         return articleService.update(article);
     }
 
-    @RequestMapping(value = "/id/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public long delete(@PathVariable long id){
         return articleService.delete(id);
