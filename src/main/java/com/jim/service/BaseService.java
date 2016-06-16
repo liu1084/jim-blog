@@ -7,5 +7,5 @@ import org.slf4j.LoggerFactory;
  * Created by liqing on 2016/5/20.
  */
 public interface BaseService {
-    Logger logger = LoggerFactory.getLogger(BaseService.class);
+    static final Logger logger = LoggerFactory.getLogger(BaseService.class);
 }

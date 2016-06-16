@@ -6,6 +6,7 @@ work
 *.iml
 src/main/resources/static/app/.sass-cache/
 src/main/resources/static/app/dist/
+src/main/resources/static/app/node_modules
 /out/
 .classpath
 .project

@@ -1,4 +1,4 @@
-package com.jim.service.utils;
+package com.jim.utils;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
