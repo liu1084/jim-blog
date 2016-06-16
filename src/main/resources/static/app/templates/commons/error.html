@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Error - <span th:replace="${code}"></span></title>
+</head>
+<body>
+<!--@thymesVar id="url" type="String"-->
+<!--<div th:if="${url}">-->
+	<!--<b>Page:</b>-->
+	<!--<span th:text="${url}"></span>-->
+<!--</div>-->
+<!--@thymesVar id="code" type="int"-->
+<div th:if="${code}">
+	<b>Code:</b>
+	<span th:text="${code}"></span>
+</div>
+<!--@thymesVar id="exception" type="String"-->
+<div th:if="${exception}">
+	<b>Message:</b>
+	<span th:text="${exception}"></span>
+</div>
+</body>
+</html>

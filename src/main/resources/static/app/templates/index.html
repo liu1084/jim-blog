@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html ng-app="blog">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<title>Blog</title>
+	<link type="text/css" rel="stylesheet" href="../libs/normalize-css/normalize.css"/>
+	<link type="text/css" rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css"/>
+	<link type="text/css" rel="stylesheet" href="../libs/angular-bootstrap/ui-bootstrap-csp.css"/>
+	<link type="text/css" rel="stylesheet" href="../libs/angular-ui/build/angular-ui.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/main.css"/>
+</head>
+<body class="container-fluid">
+<div ng-view>
+    <div ng-controller="testCtrl">{{id}}</div>
+</div>
+<script type="text/javascript" src="../libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../libs/angular/angular.js"></script>
+<script type="text/javascript" src="../libs/angular-bootstrap/ui-bootstrap.js"></script>
+<script type="text/javascript" src="../libs/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>

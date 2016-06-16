@@ -1,0 +1,24 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<title>Blog</title>
+	<link type="text/css" rel="stylesheet" th:href="@{/static/app/libs/normalize-css/normalize.css}"/>
+	<link type="text/css" rel="stylesheet" th:href="@{/static/app/libs/angular-bootstrap/ui-bootstrap-csp.css}"/>
+	<link type="text/css" rel="stylesheet" th:href="@{/static/app/libs/angular-ui/build/angular-ui.css}"/>
+	<link type="text/css" rel="stylesheet" th:href="@{/static/app/css/main.css}"/>
+</head>
+<body class="">
+<script type="text/javascript" th:src="@{/static/app/libs/jquery/dist/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/static/app/libs/angular/angular.js}"></script>
+<script type="text/javascript" th:src="@{/static/app/libs/angular-bootstrap/ui-bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/static/app/libs/angular-ui-router/release/angular-ui-router.js}"></script>
+<script type="text/javascript" th:src="@{/static/app/js/main.js}"></script>
+<div th:fragment="header"></div>
+<div ui-view></div>
+<div th:fragment="footer"></div>
+</body>
+</html>
