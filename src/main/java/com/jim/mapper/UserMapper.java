@@ -53,5 +53,9 @@ public interface UserMapper {
      */
     int updateByPrimaryKey(User record);
 
-    List<User> users();
+	List<User> users();
+
+	int getCountByUsername(String username);
+	User getUserByUsername(String username);
+
 }

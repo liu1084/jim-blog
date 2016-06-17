@@ -1,6 +1,8 @@
 package com.jim.service.impl;
 
 import com.jim.mapper.UserMapper;
+import com.jim.mapper.UserRoleMapper;
+import com.jim.model.Role;
 import com.jim.service.UserService;
 import com.jim.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +15,13 @@ import java.util.List;
  * This class is ...
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserRoleMapper {
 
     @Autowired
     private UserMapper userMapper;
+
+	@Autowired
+	private UserRoleMapper userRoleMapper;
 
     @Override
     public long create(User user) {
@@ -42,4 +47,9 @@ public class UserServiceImpl implements UserService {
     public List<User> users() {
         return userMapper.users();
     }
+
+	@Override
+	public List<Role> getRoles(long id) {
+		return userRoleMapper.getRoles(id);
+	}
 }

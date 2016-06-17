@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jim.mapper.UserRoleMapper">
+
+    <resultMap id="UserResultMap" type="com.jim.model.User">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <collection column="roleId" javaType="arraylist" property="roleid" ofType="com.jim.model.Role" resultMap="RoleResultMap"/>
+    </resultMap>
+
+    <resultMap id="RoleResultMap" type="com.jim.model.Role">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+    </resultMap>
+
+    <select id="getRoles" resultMap="RoleResultMap">
+      SELECT
+        r.id AS id, r.name AS name
+        FROM users AS  u
+        LEFT JOIN user_role AS ur ON u.id = ur.userId
+        LEFT JOIN roles AS r ON r.id = ur.roleId
+        WHERE 1=1
+          AND u.id = #{id,jdbcType=BIGINT}
+          AND r.isActive = 1
+          AND u.isActive = 1
+    </select>
+</mapper>
