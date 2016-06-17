@@ -5,7 +5,7 @@
 <generatorConfiguration>
 
     <!-- Class Driver Path -->
-    <classPathEntry location="d:/http/xampp2/mysql/connector/mysql-connector-java-5.1.39-bin.jar"/>
+    <classPathEntry location="d:/http/xampp/mysql/connector/mysql-connector-java-5.1.39-bin.jar"/>
 
 
     <context id="context" targetRuntime="MyBatis3">
@@ -50,5 +50,7 @@
                enableUpdateByExample="false" domainObjectName="Article" schema="blog" escapeWildcards="true"/>
         <table tableName="comments" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" domainObjectName="Comment" schema="blog" escapeWildcards="true"/>
+        <table tableName="roles" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" domainObjectName="Role" schema="blog" escapeWildcards="true"/>
     </context>
 </generatorConfiguration>

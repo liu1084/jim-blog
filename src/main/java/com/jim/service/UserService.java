@@ -1,5 +1,6 @@
 package com.jim.service;
 
+import com.jim.model.Role;
 import com.jim.model.User;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +16,5 @@ public interface UserService {
 	int update(User user);
 	int delete(long id);
 	List<User> users();
+	List<Role> getRoles(long id);
 }

@@ -1,6 +1,7 @@
 package com.jim.mapper;
 
 import com.jim.model.Article;
+
 import java.util.List;
 
 public interface ArticleMapper {
@@ -60,5 +61,5 @@ public interface ArticleMapper {
      */
     int updateByPrimaryKey(Article record);
 
-    List<Article> articles();
+	List<Article> articles();
 }
