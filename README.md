@@ -4,5 +4,5 @@
 - mybatis
 - redis
 - thymleaf
-=======
-# jim-blog
+- angularjs
+- bootstrap
