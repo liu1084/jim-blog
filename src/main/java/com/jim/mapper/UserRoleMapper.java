@@ -1,10 +1,8 @@
 package com.jim.mapper;
 
-import com.jim.model.Role;
-import com.jim.model.User;
-import org.w3c.dom.stylesheets.LinkStyle;
-
 import java.util.List;
+
+import com.jim.model.Role;
 
 /**
  * Created by jim.liu on 2016-06-17.

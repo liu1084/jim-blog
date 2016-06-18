@@ -1,19 +1,18 @@
 package com.jim.controller;
 
 
-import com.jim.model.LoginEntry;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.jim.model.Role;
 import com.jim.model.User;
-import com.jim.service.AuthService;
 import com.jim.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Jim on 2016/5/19.
@@ -26,26 +25,50 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@RequestMapping(value = {"", "/", "/users"}, method = RequestMethod.GET)
+    /**
+     * Get all users
+     * @return
+     */
+	@RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
 	public List<User> index() {
 		return userService.users();
 	}
 
+    /**
+     * Update a user
+     * @param user
+     * @return
+     */
 	@RequestMapping(value = "/", method = RequestMethod.PUT)
 	public int update(@RequestBody(required = true) User user) {
 		return userService.update(user);
 	}
 
+    /**
+     * Create a new user
+     * @param user
+     * @return
+     */
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public long create(@RequestBody(required = true) User user) {
 		return userService.create(user);
 	}
 
+    /**
+     * Get a user by id
+     * @param id
+     * @return
+     */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public User read(@PathVariable long id) {
 		return userService.read(id);
 	}
 
+    /**
+     * Delete a user by id
+     * @param id
+     * @return
+     */
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public int delete(@PathVariable long id) {
 		return userService.delete(id);
@@ -57,11 +80,21 @@ public class UserController {
 	}
 
 
+    /**
+     * Get all roles of a user by user id
+     * @param id
+     * @param roles
+     */
     @RequestMapping(value = "/{id}/roles", method = RequestMethod.POST)
     public void addRoles(@PathVariable long id, List<Role> roles){
         userService.addRoles(id, roles);
     }
 
+    /**
+     * Delete roles of a user by user id & role list
+     * @param id
+     * @param roles
+     */
     @RequestMapping(value = "/{id}/roles", method = RequestMethod.DELETE)
     public void deleteRoles(@PathVariable long id, List<Role> roles){
         userService.deleteRoles(id, roles);

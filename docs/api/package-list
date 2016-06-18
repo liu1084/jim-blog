@@ -1,0 +1,10 @@
+com.jim
+com.jim.common
+com.jim.common.config
+com.jim.common.enums
+com.jim.controller
+com.jim.mapper
+com.jim.model
+com.jim.service
+com.jim.service.impl
+com.jim.utils

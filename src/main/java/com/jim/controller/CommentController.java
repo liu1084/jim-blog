@@ -20,29 +20,6 @@ public class CommentController implements BlogBase {
 
     @Autowired
     private CommentService commentService;
-    /**
-     * Get comments by article id
-     *
-     * @param articleId
-     * @return
-     */
-    @RequestMapping(value = "/article/{articleId}/comments", method = RequestMethod.GET)
-    public List<Comment> index(@PathVariable long articleId) {
-        return commentService.index(articleId);
-    }
-
-
-    /**
-     * Create a new comment for a article
-     *
-     * @param articleId
-     * @param comment
-     * @return
-     */
-    @RequestMapping(value = "/article/{articleId}/comment", method = RequestMethod.POST)
-    public int create(@PathVariable long articleId, Comment comment) {
-        return commentService.create(articleId, comment);
-    }
 
     /**
      * Read a comment by id

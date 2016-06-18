@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by jim.liu on 2016-06-17.
- * This class is ...
+ * Authority
  */
 
 @Service
@@ -18,24 +17,44 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * Login
+     * @param loginEntry
+     * @return
+     */
     @Override
     public String login(LoginEntry loginEntry) {
 
         return "";
     }
 
+    /**
+     * Logout
+     * @param id
+     * @return
+     */
     @Override
     public String logout(long id) {
 
         return null;
     }
 
+    /**
+     * regist a new user
+     * @param user
+     * @return
+     */
     @Override
     public String register(User user) {
 
         return null;
     }
 
+    /**
+     * Reset a user's password by sending a mail
+     * @param username
+     * @return
+     */
     @Override
     public String resetPassword(String username) {
         return null;

@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Created by Jim on 2016/5/19.
- * This class is ...
+ * Render home page
  */
 @Controller
 public class DashboardController implements BlogBase {

@@ -1,10 +1,9 @@
 package com.jim.service;
 
+import java.util.List;
+
 import com.jim.model.Role;
 import com.jim.model.User;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by Jim on 2016/5/20.
