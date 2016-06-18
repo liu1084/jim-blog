@@ -1,7 +1,5 @@
 package com.jim.service.impl;
 
-import com.google.gson.JsonObject;
-import com.jim.common.enums.LoginError;
 import com.jim.mapper.UserMapper;
 import com.jim.model.LoginEntry;
 import com.jim.model.User;
@@ -17,55 +15,29 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthServiceImpl implements AuthService {
 
-	@Autowired
-	private UserMapper userMapper;
+    @Autowired
+    private UserMapper userMapper;
 
-	@Override
-	public String login(LoginEntry loginEntry) {
-		LoginError tip = null;
-		boolean isLogin = false;
+    @Override
+    public String login(LoginEntry loginEntry) {
 
-		String username = loginEntry.getUsername();
-		String password = loginEntry.getPassword();
-		String challengeCode = loginEntry.getChallengeCode();
-		JsonObject jsonObject = new JsonObject();
+        return "";
+    }
 
-		int count = userMapper.getCountByUsername(username);
-		if (count == 0){
-			tip = LoginError.USERNAME_NOT_EXIST;
-		}
+    @Override
+    public String logout(long id) {
 
-		User user = userMapper.getUserByUsername(username);
-		if (user == null || !user.getPassword().equals(loginEntry.getPassword())){
-			tip = LoginError.USERNAME_OR_PASSWORD_ERROR;
-		}
+        return null;
+    }
 
-		if (user != null && user.getIsactive().equals("0")){
-			tip = LoginError.USERNAME_IS_NOT_ACTIVE;
-		}
+    @Override
+    public String register(User user) {
 
-		if (!tip.equals("")){
-			jsonObject.addProperty("isLogin", isLogin);
-			//jsonObject.add("tip", tip);
-		}
+        return null;
+    }
 
-		return jsonObject.toString();
-	}
-
-	@Override
-	public String logout(long id) {
-
-		return null;
-	}
-
-	@Override
-	public String register(User user) {
-
-		return null;
-	}
-
-	@Override
-	public String resetPassword(String username) {
-		return null;
-	}
+    @Override
+    public String resetPassword(String username) {
+        return null;
+    }
 }

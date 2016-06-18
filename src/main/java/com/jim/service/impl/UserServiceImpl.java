@@ -15,13 +15,13 @@ import java.util.List;
  * This class is ...
  */
 @Service
-public class UserServiceImpl implements UserService, UserRoleMapper {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
 
-	@Autowired
-	private UserRoleMapper userRoleMapper;
+    @Autowired
+    private UserRoleMapper userRoleMapper;
 
     @Override
     public long create(User user) {
@@ -48,8 +48,23 @@ public class UserServiceImpl implements UserService, UserRoleMapper {
         return userMapper.users();
     }
 
-	@Override
-	public List<Role> getRoles(long id) {
-		return userRoleMapper.getRoles(id);
-	}
+    @Override
+    public List<Role> getRoles(long id) {
+        return userRoleMapper.getRoles(id);
+    }
+
+    @Override
+    public void addRoles(long userId, List<Role> roles) {
+        for (Role role : roles) {
+            userRoleMapper.addRole(userId, role.getId());
+        }
+    }
+
+    @Override
+    public void deleteRoles(long userId, List<Role> roles) {
+        for (Role role : roles) {
+            userRoleMapper.deleteRole(userId, role.getId());
+        }
+    }
+
 }

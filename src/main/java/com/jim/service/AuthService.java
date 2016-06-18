@@ -8,8 +8,11 @@ import com.jim.model.User;
  * This class is ...
  */
 public interface AuthService {
-	String login(LoginEntry loginEntry);
-	String logout(long id);
-	String register(User user);
-	String resetPassword(String username);
+    String login(LoginEntry loginEntry);
+
+    String logout(long id);
+
+    String register(User user);
+
+    String resetPassword(String username);
 }

@@ -1,6 +1,7 @@
 package com.jim.mapper;
 
 import com.jim.model.Role;
+import com.jim.model.User;
 import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
@@ -11,4 +12,6 @@ import java.util.List;
  */
 public interface UserRoleMapper {
 	List<Role> getRoles(long id);
+    int addRole(long userId, long roleId);
+    int deleteRole(long userId, long roleId);
 }

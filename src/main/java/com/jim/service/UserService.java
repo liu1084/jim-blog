@@ -17,4 +17,6 @@ public interface UserService {
 	int delete(long id);
 	List<User> users();
 	List<Role> getRoles(long id);
+    void addRoles(long userId,List<Role> roles);
+    void deleteRoles(long userId, List<Role> roles);
 }

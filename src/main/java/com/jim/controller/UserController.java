@@ -26,9 +26,6 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@Autowired
-	AuthService authService;
-
 	@RequestMapping(value = {"", "/", "/users"}, method = RequestMethod.GET)
 	public List<User> index() {
 		return userService.users();
@@ -59,14 +56,14 @@ public class UserController {
 		return userService.getRoles(id);
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(){
-		LoginEntry loginEntry = new LoginEntry();
-		String username = "liujun";
-		String password = "111";
-		loginEntry.setUsername(username);
-		loginEntry.setPassword(password);
-		loginEntry.setChallengeCode("11");
-		return authService.login(loginEntry);
-	}
+
+    @RequestMapping(value = "/{id}/roles", method = RequestMethod.POST)
+    public void addRoles(@PathVariable long id, List<Role> roles){
+        userService.addRoles(id, roles);
+    }
+
+    @RequestMapping(value = "/{id}/roles", method = RequestMethod.DELETE)
+    public void deleteRoles(@PathVariable long id, List<Role> roles){
+        userService.deleteRoles(id, roles);
+    }
 }
