@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * This class is ...
  */
 @Controller
-@RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
 public class DashboardController implements BlogBase {
-	@RequestMapping(value = {""}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
 	public String index() {
 		return "index";
 	}

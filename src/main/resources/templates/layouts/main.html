@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	  ng-app="blog">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<title>Blog</title>
+	<link type="text/css" rel="stylesheet"
+		  th:href="@{/static/app/libs/normalize-css/normalize.css}"
+		  href="../../static/app/libs/normalize-css/normalize.css"/>
+	<link type="text/css" rel="stylesheet"
+		  th:href="@{/static/app/libs/bootstrap/dist/css/bootstrap.css}"
+		  href="../../static/app/libs/bootstrap/dist/css/bootstrap.css"/>
+	<link type="text/css" rel="stylesheet"
+		  th:href="@{/static/app/libs/angular-bootstrap/ui-bootstrap-csp.css}"
+		  href="../../static/app/libs/angular-bootstrap/ui-bootstrap-csp.css"/>
+	<link type="text/css" rel="stylesheet"
+		  th:href="@{/static/app/libs/angular-ui/build/angular-ui.css}"
+		  href="../../static/app/libs/angular-ui/build/angular-ui.css"/>
+	<link type="text/css" rel="stylesheet" th:href="@{/static/app/css/main.css}"
+		  href="../../static/app/css/main.css"/>
+
+	<!-- css fragment -->
+	<div layout:fragment="vendor_css"></div>
+	<div layout:fragment="css"></div>
+</head>
+<body class="container-fluid">
+<!-- header fragment -->
+<div layout:fragment="header" th:replace="commons/header::header"></div>
+<!-- content fragment -->
+<div layout:fragment="content"></div>
+<!-- footer fragment -->
+<div layout:fragment="footer" th:replace="commons/footer::footer"></div>
+
+<!-- javascript -->
+<script type="text/javascript"
+		th:src="@{/static/app/libs/jquery/dist/jquery.js}"
+		src="../../static/app/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript"
+		th:src="@{/static/app/libs/angular/angular.js}"
+		src="../../static/app/libs/angular/angular.js"></script>
+<script type="text/javascript"
+		th:src="@{/static/app/libs/angular-bootstrap/ui-bootstrap.js}"
+		src="../../static/app/libs/angular-bootstrap/ui-bootstrap.js"></script>
+<script type="text/javascript"
+		th:src="@{/static/app/libs/angular-ui-router/release/angular-ui-router.js}"
+		src="../../static/app/libs/angular-ui-router/release/angular-ui-router.js"></script>
+
+<!-- vendor javascript fragment-->
+<div layout:fragment="vendor_js"></div>
+<!-- dependencies javascript fragment-->
+<div layout:fragment="dependencies_js"></div>
+<!-- javascript fragment-->
+<div layout:fragment="js"></div>
+</body>
+</html>
