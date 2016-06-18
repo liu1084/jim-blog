@@ -27,13 +27,28 @@ CREATE TABLE `articles` (
   `create_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isDraft` tinyint(1) NOT NULL DEFAULT '0',
-  `isPrivate` tinyint(1) DEFAULT '0',
+  `isPrivate` tinyint(1) NOT NULL DEFAULT '0',
+  `isActive` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Data for the table `articles` */
 
-insert  into `articles`(`id`,`title`,`content`,`userId`,`create_at`,`update_at`,`isDraft`,`isPrivate`) values (1,'task1','dddddddddddddddddddddddddd',1,'2016-06-05 00:40:35','2016-06-05 00:40:35',0,0);
+insert  into `articles`(`id`,`title`,`content`,`userId`,`create_at`,`update_at`,`isDraft`,`isPrivate`,`isActive`) values (1,'task1','dddddddddddddddddddddddddd',1,'2016-06-05 00:40:35','2016-06-05 00:40:35',0,0,1),(2,'title2','fewfewfew',2,'2016-06-09 00:59:44','2016-06-09 00:59:44',0,0,1),(3,'t3','dd',1,'2016-06-14 01:31:40','2016-06-14 01:31:40',0,0,1),(4,'t4','dfeaf',1,'2016-06-14 01:35:00','2016-06-14 01:35:00',0,0,1);
+
+/*Table structure for table `articles_metadata` */
+
+DROP TABLE IF EXISTS `articles_metadata`;
+
+CREATE TABLE `articles_metadata` (
+  `id` bigint(30) unsigned NOT NULL AUTO_INCREMENT,
+  `articleId` bigint(30) NOT NULL DEFAULT '1',
+  `key` varchar(50) NOT NULL DEFAULT '',
+  `value` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `articles_metadata` */
 
 /*Table structure for table `comments` */
 
@@ -48,13 +63,27 @@ CREATE TABLE `comments` (
   `articleId` bigint(30) NOT NULL,
   `create_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `isLocked` tinyint(1) DEFAULT '0',
+  `isActive` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `comments` */
 
-insert  into `comments`(`id`,`parentId`,`title`,`content`,`userId`,`articleId`,`create_at`,`update_at`,`isLocked`) values (1,NULL,'task comment 1','/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;\r\n/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;\r\n/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;\r\n/*!40101 SET NAMES utf8 */;\r\n/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\r\n/*!40103 SET TIME_ZONE=\'+00:00\' */;\r\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\r\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\r\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=\'NO_AUTO_VALUE_ON_ZERO\' */;\r\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\r\n\r\n...........',1,1,'2016-06-05 00:41:59','2016-06-05 00:41:59',0);
+insert  into `comments`(`id`,`parentId`,`title`,`content`,`userId`,`articleId`,`create_at`,`update_at`,`isActive`) values (1,NULL,'task comment 1','/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;\r\n/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;\r\n/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;\r\n/*!40101 SET NAMES utf8 */;\r\n/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\r\n/*!40103 SET TIME_ZONE=\'+00:00\' */;\r\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\r\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\r\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=\'NO_AUTO_VALUE_ON_ZERO\' */;\r\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\r\n\r\n...........',1,1,'2016-06-05 00:41:59','2016-06-05 00:41:59',1),(2,1,'task comment 1 - 1','fff',1,1,'2016-06-18 11:57:59','2016-06-18 11:57:59',1);
+
+/*Table structure for table `comments_metadata` */
+
+DROP TABLE IF EXISTS `comments_metadata`;
+
+CREATE TABLE `comments_metadata` (
+  `id` bigint(30) unsigned NOT NULL AUTO_INCREMENT,
+  `commentId` bigint(30) NOT NULL DEFAULT '1',
+  `key` varchar(50) NOT NULL DEFAULT '',
+  `value` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `comments_metadata` */
 
 /*Table structure for table `roles` */
 
