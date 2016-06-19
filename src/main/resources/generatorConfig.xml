@@ -55,15 +55,15 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <!--<table tableName="users" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
-               <!--enableUpdateByExample="false" domainObjectName="User" schema="blog" escapeWildcards="true"/>-->
+        <table tableName="user_role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" domainObjectName="UserRole" schema="blog" escapeWildcards="true"/>
         <!--<table tableName="articles" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
                <!--enableUpdateByExample="false" domainObjectName="Article" schema="blog" escapeWildcards="true"/>-->
         <!--<table tableName="comments" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
                <!--enableUpdateByExample="false" domainObjectName="Comment" schema="blog" escapeWildcards="true"/>-->
-        <table tableName="articles_metadata" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" domainObjectName="ArticlesMetadata" schema="blog" escapeWildcards="true"/>
-        <table tableName="comments_metadata" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" domainObjectName="CommentsMetadata" schema="blog" escapeWildcards="true"/>
+        <!--<table tableName="articles_metadata" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" domainObjectName="ArticlesMetadata" schema="blog" escapeWildcards="true"/>-->
+        <!--<table tableName="comments_metadata" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" domainObjectName="CommentsMetadata" schema="blog" escapeWildcards="true"/>-->
     </context>
 </generatorConfiguration>
