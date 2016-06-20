@@ -34,16 +34,18 @@
 		  href="../../static/app/css/main.css"/>
 
 	<!-- css fragment -->
-	<div layout:fragment="vendor_css"></div>
-	<div layout:fragment="css"></div>
+	<div layout:fragment="vendor_css" th:remove="tag"></div>
+	<div layout:fragment="css" th:remove="tag"></div>
 </head>
 <body class="container-fluid">
 <!-- header fragment -->
-<div layout:fragment="header" th:replace="commons/header::header"></div>
+<div layout:fragment="header" th:replace="commons/header::#header" th:remove="tag"></div>
 <!-- content fragment -->
-<div layout:fragment="content"></div>
+<div layout:fragment="content" th:remove="tag">
+	<section data-ui-view=""></section>
+</div>
 <!-- footer fragment -->
-<div layout:fragment="footer" th:replace="commons/footer::footer"></div>
+<div layout:fragment="footer" th:replace="commons/footer::#footer" th:remove="tag"></div>
 
 <!-- javascript -->
 <script type="text/javascript"
@@ -60,10 +62,10 @@
 		src="../../static/app/libs/angular-ui-router/release/angular-ui-router.js"></script>
 
 <!-- vendor javascript fragment-->
-<div layout:fragment="vendor_js"></div>
+<div layout:fragment="vendor_js" th:remove="tag"></div>
 <!-- dependencies javascript fragment-->
-<div layout:fragment="dependencies_js"></div>
+<div layout:fragment="dependencies_js" th:remove="tag"></div>
 <!-- javascript fragment-->
-<div layout:fragment="js"></div>
+<div layout:fragment="js" th:remove="tag"></div>
 </body>
 </html>
